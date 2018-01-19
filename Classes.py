@@ -14,11 +14,11 @@ class Player:
 
         if grid[move[0]][move[1]] == None:
             grid[move[0]][move[1]] = self.fig
-            return True, grid
+            return self.fig
 
         else:
             #The place is already taken
-            return False, grid
+            return grid[move[0]][move[1]]
 
     def won(self, grid):
         """Winning conditions"""

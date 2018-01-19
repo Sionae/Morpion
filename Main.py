@@ -1,12 +1,17 @@
-from time import sleep
-# import pygame
-# from pygame.locals import *
-
 from Classes import *
-from Genes import *
+# from Genes import *
 
-Player1 = Player("Player 1", "O")
-Player2 = Player("Player 2", "X")
+Player1 = Player("Samuel", "O")
+Player2 = Player("Papa", "X")
 
-winner = game(Player1, Player2, grid())
-print(winner.name, "has won!")
+Running = True
+while Running:
+	winner, Running = game(Player1, Player2, grid())
+	if winner == Player1 or winner == Player2:
+		print(winner.name, "has won!")
+	else:
+		print("Tie!")
+
+	sleep(2)
+
+pygame.quit()
